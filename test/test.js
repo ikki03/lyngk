@@ -12,7 +12,7 @@ LyngkTestCase.prototype.testhist2 = function () {
         for (var l = 1; l <= 9; l++) {
             testcase = new Lyngk.Coordinates(String.fromCharCode(c), l);
             if (testcase.valid()) {
-                compteur++
+                compteur++;
             }
         }
     }
