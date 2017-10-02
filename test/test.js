@@ -4,7 +4,7 @@ var LyngkTestCase = TestCase("LyngkTestCase");
 LyngkTestCase.prototype.testcoorok = function () {
     var testcase = new Lyngk.Coordinates("A", 1);
     assertFalse(testcase.valid());
-}
+};
 LyngkTestCase.prototype.testhist2 = function () {
     var compteur = 0;
     var testcase;
@@ -17,4 +17,8 @@ LyngkTestCase.prototype.testhist2 = function () {
         }
     }
     assertEquals(compteur, 43);
-}
+};
+LyngkTestCase.prototype.testhist3 = function () {
+    var testcase = new Lyngk.Coordinates("A", 3);
+    assertEquals(testcase.toString(), "A3");
+};
