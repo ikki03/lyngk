@@ -28,6 +28,6 @@ LyngkTestCase.prototype.testhist4 = function () {
 };
 LyngkTestCase.prototype.testhist5 = function () {
     var testcase = new Lyngk.Coordinates("A", 3);
-    var testcaseclone = testcaseclone.clone(testcase);
+    var testcaseclone = testcase.clone();
     assertEquals(testcase.toString(), testcaseclone.toString());
 };

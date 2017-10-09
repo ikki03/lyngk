@@ -18,4 +18,7 @@ Lyngk.Coordinates = function (c, l) {
             return "invalid";
         }
     };
+    this.clone=function(){
+        return new Coordinates(this.c,this.l);
+    };
 };
