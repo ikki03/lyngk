@@ -22,3 +22,7 @@ LyngkTestCase.prototype.testhist3 = function () {
     var testcase = new Lyngk.Coordinates("A", 3);
     assertEquals(testcase.toString(), "A3");
 };
+LyngkTestCase.prototype.testhist4 = function () {
+    var testcase = new Lyngk.Coordinates("A", 1);
+    assertEquals(testcase.toString(), "invalid");
+};
