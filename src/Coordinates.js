@@ -21,4 +21,8 @@ Lyngk.Coordinates = function (c, l) {
     this.clone=function(){
         return new Lyngk.Coordinates(this.c,this.l);
     };
+    this.hash=function(){
+        return this.c.charCodeAt()+this.l;
+    };
+
 };
