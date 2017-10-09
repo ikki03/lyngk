@@ -31,3 +31,7 @@ LyngkTestCase.prototype.testhist5 = function () {
     var testcaseclone = testcase.clone();
     assertEquals(testcase.toString(), testcaseclone.toString());
 };
+LyngkTestCase.prototype.testhist6 = function () {
+    var testcase = new Lyngk.Coordinates("A", 3);
+    assertEquals(testcase.hash(), 68);
+};
