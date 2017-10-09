@@ -12,6 +12,10 @@ Lyngk.Coordinates = function (c, l) {
         return valtab.indexOf(c+l)!= -1;
     };
     this.toString=function(){
-        return c+l;
+        if(this.valid()){
+            return c + l;
+        }else {
+            return "invalid";
+        }
     };
 };
