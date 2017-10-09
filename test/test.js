@@ -39,3 +39,9 @@ LyngkTestCase.prototype.testhist7 = function () {
     var intersect = new Lyngk.Intersection();
     assertEquals(intersect.getState(),Lyngk.State.VACANT);
 };
+LyngkTestCase.prototype.testhist8 = function () {
+    var intersect = new Lyngk.Intersection();
+    intersect.pose(Lyngk.Color.BLUE);
+    assertEquals(intersect.getState(),Lyngk.State.ONE_PIECE);
+    assertEquals(intersect.getColor(),Lyngk.Color.BLUE);
+};
