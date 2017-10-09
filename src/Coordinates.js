@@ -19,6 +19,6 @@ Lyngk.Coordinates = function (c, l) {
         }
     };
     this.clone=function(){
-        return new Coordinates(this.c,this.l);
+        return new Lyngk.Coordinates(this.c,this.l);
     };
 };
