@@ -35,3 +35,7 @@ LyngkTestCase.prototype.testhist6 = function () {
     var testcase = new Lyngk.Coordinates("A", 3);
     assertEquals(testcase.hash(), 68);
 };
+LyngkTestCase.prototype.testhist7 = function () {
+    var intersect = new Lyngk.Intersection();
+    assertEquals(intersect.getState(),Lyngk.State.VACANT);
+};
