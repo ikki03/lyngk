@@ -24,6 +24,9 @@ Lyngk.Intersection = function () {
     this.getColor=function(){
         return pieces[pieces.length-1].getColor();
     };
+    this.getHauteur=function(){
+        return pieces.length;
+    };
 
 
 };
