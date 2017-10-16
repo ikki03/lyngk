@@ -11,6 +11,7 @@ Lyngk.Intersection = function () {
     };
 
     this.pose=function(colo){
+
         if(pieces.length<=0) {
             state = Lyngk.State.ONE_PIECE;
         }else if(pieces.length >  0 && pieces.length < 4){
@@ -19,7 +20,22 @@ Lyngk.Intersection = function () {
             state = Lyngk.State.FULL_STACK;
         }
         pieces.push(new Lyngk.Piece(colo));
+
     };
+    this.remove=function(){
+        pieces.pop();
+        console.log(pieces.length);
+        if(pieces.length=0) {
+            state = Lyngk.State.VACANT;
+        }else if(pieces.length >  0 && pieces.length < 4){
+            state = Lyngk.State.STACK;
+        }else if(pieces.length >= 4){
+            state = Lyngk.State.FULL_STACK;
+        }
+
+
+    };
+
 
     this.getColor=function(){
         return pieces[pieces.length-1].getColor();

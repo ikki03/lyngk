@@ -54,6 +54,10 @@ Lyngk.Engine = function () {
     this.plateau = function() {
         return tab;
     };
+    this.deplace = function(a,b) {
+        tab[b].pose(tab[a].topiece());
+        tab[a].remove();
+    };
 
     init();
 
