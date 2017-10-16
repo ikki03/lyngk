@@ -79,7 +79,7 @@ LyngkTestCase.prototype.testhist12 = function()
     for (var coor in plateau) {
         if (plateau.hasOwnProperty(coor))
         {
-            colorNumber[plateau[coor].color()]++;
+            colorNumber[plateau[coor].getColor()]++;
         }
     }
 
