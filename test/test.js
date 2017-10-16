@@ -92,4 +92,14 @@ LyngkTestCase.prototype.testhist12 = function()
             ok = false;
     }
     assertTrue(ok);
-}
+};
+
+LyngkTestCase.prototype.testhist13 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    var plateau = jeu.plateau();
+    var ok =true;
+    for (var coor in plateau) {
+        assertEquals(plateau[coor].getHauteur(),1);
+    }
+};
