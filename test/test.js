@@ -66,3 +66,30 @@ LyngkTestCase.prototype.testhist11 = function () {
     plateau.init_OnePiece();
     assertTrue(plateau.full_One_Piece());
 };
+
+
+LyngkTestCase.prototype.testhist12 = function()
+{
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    var plateau = jeu.plateau();
+
+    var colorNumber = [0,0,0,0,0,0];
+
+    for (var coor in plateau) {
+        if (plateau.hasOwnProperty(coor))
+        {
+            colorNumber[plateau[coor].color()]++;
+        }
+    }
+
+    var ok = true;
+    for(var i = 0; i < colorNumber.length; i++)
+    {
+        if(i <= 4 && colorNumber[i] != 8)
+            ok = false;
+        else if(i == 5 && colorNumber[i] != 3)
+            ok = false;
+    }
+    assertTrue(ok);
+}
