@@ -110,3 +110,14 @@ LyngkTestCase.prototype.testhist14 = function () {
         assertEquals(plateau[coor].getColor(),plateau[coor].topiece().getColor());
     }
 };
+LyngkTestCase.prototype.testhist15 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    var plateau = jeu.plateau();
+    var coloratest = plateau["A3"].getColor();
+    jeu.deplace("A3","B3");
+    assertEquals(plateau["A3"].getHauteur(),0);
+    assertEquals(plateau["A3"].getState(),Lyngk.State.VACANT)
+    assertEquals(plateau["B3"].getColor(),coloratest);
+    assertEquals(plateau["B3"].getHauteur(),2 );
+};
