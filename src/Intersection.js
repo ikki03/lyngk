@@ -22,8 +22,8 @@ Lyngk.Intersection = function () {
         pieces.push(new Lyngk.Piece(colo));
 
     };
-    this.remove=function(){
-        pieces.pop();
+    this.remove=function(i){
+        pieces = pieces.slice(i,i);
         if(pieces.length==0) {
             state = Lyngk.State.VACANT;
         }else if(pieces.length >  0 && pieces.length < 4){
@@ -44,6 +44,9 @@ Lyngk.Intersection = function () {
     };
     this.topiece=function(){
         return pieces[pieces.length-1];
+    };
+    this.getpiece=function(){
+        return pieces;
     };
 
 
