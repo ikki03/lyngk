@@ -60,8 +60,6 @@ Lyngk.Engine = function () {
             tab[b].pose(piece[psolo].getColor());
             tab[a].remove(parseInt(psolo));
         }
-                //tab[b].pose(tab[a].topiece().getColor());
-                //tab[a].remove();
     };
 
     init();
