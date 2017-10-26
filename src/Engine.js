@@ -55,7 +55,7 @@ Lyngk.Engine = function () {
         return tab;
     };
     this.deplace = function(a,b) {
-        tab[b].pose(tab[a].topiece());
+        tab[b].pose(tab[a].topiece().getColor());
         tab[a].remove();
     };
 

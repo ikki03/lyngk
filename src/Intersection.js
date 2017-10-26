@@ -24,8 +24,7 @@ Lyngk.Intersection = function () {
     };
     this.remove=function(){
         pieces.pop();
-        console.log(pieces.length);
-        if(pieces.length=0) {
+        if(pieces.length==0) {
             state = Lyngk.State.VACANT;
         }else if(pieces.length >  0 && pieces.length < 4){
             state = Lyngk.State.STACK;
