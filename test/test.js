@@ -152,3 +152,13 @@ LyngkTestCase.prototype.testhist17 = function () {
     assertEquals(plateau["B2"].getState(),Lyngk.State.VACANT);
     assertEquals(plateau["B2"].getHauteur(),0);
 };
+LyngkTestCase.prototype.testhist18 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    var plateau = jeu.plateau();
+    jeu.deplace("C2","B3");
+    assertEquals(plateau["B3"].getHauteur(),1);
+    assertEquals(plateau["B3"].getState(),Lyngk.State.ONE_PIECE);
+    assertEquals(plateau["C2"].getState(),Lyngk.State.ONE_PIECE);
+    assertEquals(plateau["C2"].getHauteur(),1);
+};
