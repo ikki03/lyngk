@@ -55,7 +55,8 @@ Lyngk.Engine = function () {
         return tab;
     };
     this.deplace = function(a,b) {
-        if (tab[b].getState()!=Lyngk.State.VACANT) {
+
+        if (tab[b].getState()!=Lyngk.State.VACANT && deplaceok(a,b)) {
             var piece = tab[a].getpiece();
             for (var psolo in piece) {
                 tab[b].pose(piece[psolo].getColor());
@@ -63,9 +64,32 @@ Lyngk.Engine = function () {
 
             }
         }else {
-            console.log("pas d'éléments dans : "+ b+" déplacement de "+a+" -> "+b+" non effectuer")
+            console.log("erreur déplacement de "+a+" -> "+b+" non effectuer")
         }
     };
+
+    var deplaceok = function (a,b) {
+        var ok = false;
+        var test;
+        if (a.charAt(0) === b.charAt(0)){
+
+            test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
+           if(test == 1 || test == -1){
+               ok =true ;
+           }
+        }else if (a.charAt(0) > b.charAt(0)){
+            test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
+            if(test == 1 || test == 0){
+                ok =true ;
+            }
+        }else if (a.charAt(0) < b.charAt(0)){
+            test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
+            if(test == 0 || test == -1){
+                ok =true ;
+            }
+        }
+        return ok;
+    }
 
     init();
 
