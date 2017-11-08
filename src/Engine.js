@@ -56,7 +56,7 @@ Lyngk.Engine = function () {
     };
     this.deplace = function(a,b) {
 
-        if (tab[b].getState()!=Lyngk.State.VACANT && deplaceok(a,b) && tab[a].getState()!=Lyngk.State.FULL_STACK) {
+        if (tab[b].getState()!=Lyngk.State.VACANT && deplaceok(a,b) && tab[a].getState()!=Lyngk.State.FULL_STACK && tab[a].getHauteur() >= tab[b].getHauteur()) {
             var piece = tab[a].getpiece();
             for (var psolo in piece) {
                 tab[b].pose(piece[psolo].getColor());
@@ -72,7 +72,6 @@ Lyngk.Engine = function () {
         var ok = false;
         var test;
         if (a.charAt(0) === b.charAt(0)){
-
             test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
            if(test == 1 || test == -1){
                ok =true ;
