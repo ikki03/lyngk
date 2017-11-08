@@ -6,6 +6,8 @@ Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
 Lyngk.Engine = function () {
     var tab = {};
     var player ;
+    var coloreclamer1 = [] ;
+    var coloreclamer2 = [] ;
     var init = function()
     {
         player = 1;
@@ -116,6 +118,25 @@ Lyngk.Engine = function () {
             player =2;
         }else{
             player =1;
+        }
+    };
+
+    this.getReclame = function (i){
+        if(i ==1){
+            return coloreclamer1;
+        }else{
+            return coloreclamer2;
+        }
+    };
+    this.reclame = function (couleur){
+        if(coloreclamer1.indexOf(couleur) ==-1 && coloreclamer2.indexOf(couleur) ==-1){
+            if(this.getPlayer() ==1){
+                coloreclamer1.push(couleur);
+            }else{
+                coloreclamer2.push(couleur);
+            }
+        }else{
+            console.log("la couleur n'a pas pu etre reclammer");
         }
     };
 

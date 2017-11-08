@@ -308,7 +308,7 @@
       <workItem from="1510076846501" duration="169000" />
       <workItem from="1510077087671" duration="1078000" />
       <workItem from="1510083587093" duration="8223000" />
-      <workItem from="1510128479460" duration="14666000" />
+      <workItem from="1510128479460" duration="14684000" />
     </task>
     <task id="LOCAL-00001" summary="test histoire 1">
       <created>1506932790695</created>
@@ -548,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510148831664</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="test histoire 26">
+      <created>1510151866361</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1510151866361</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -584,7 +591,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64921000" />
+    <option name="totallyTimeSpent" value="64939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
@@ -643,7 +650,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test histoire 5" />
     <MESSAGE value="test histoire 4 ok&#10; modification de la partie clone dans le test pour s'appeler elle meme" />
     <MESSAGE value="test histoire 4 ok" />
     <MESSAGE value="test histoire 10 ok modification pour passer en tableau fini" />
@@ -668,7 +674,8 @@
     <MESSAGE value="histoire 24 fini" />
     <MESSAGE value="test histoire 25" />
     <MESSAGE value="histoire 25 fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="histoire 25 fini" />
+    <MESSAGE value="test histoire 26" />
+    <option name="LAST_COMMIT_MESSAGE" value="test histoire 26" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
