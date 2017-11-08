@@ -174,3 +174,16 @@ LyngkTestCase.prototype.testhist19 = function () {
     assertEquals(plateau["H8"].getHauteur(),1);
     jeu.deplace("H5","F5"); // c'est un coup qui est possible .
 };
+LyngkTestCase.prototype.testhist20 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    var plateau = jeu.plateau();
+    jeu.deplace("B2","C2");
+    jeu.deplace("C2","D3");
+    jeu.deplace("D3","D2");
+    jeu.deplace("D2","E2");
+    jeu.deplace("E2","E3");
+    assertEquals(plateau["E2"].getHauteur(),5);
+    assertEquals(plateau["E2"].getState(),Lyngk.State.FULL_STACK);
+    assertEquals(plateau["E3"].getHauteur(),1);
+};
