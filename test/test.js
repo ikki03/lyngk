@@ -233,3 +233,12 @@ LyngkTestCase.prototype.testhist25 = function () {
     jeu.deplace("G4","G5");
     assertEquals(jeu.getPlayer(),2);
 };
+LyngkTestCase.prototype.testhist26 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    jeu.reclame(Lyngk.Color.RED);
+    jeu.deplace("A3","B3");
+    jeu.reclame(Lyngk.Color.GREEN);
+    assertEquals(jeu.getReclame(1),Lyngk.Color.RED);
+    assertEquals(jeu.getReclame(2),Lyngk.Color.GREEN);
+};

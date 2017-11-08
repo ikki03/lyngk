@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="">
+    <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="histoire 25 fini">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine.js" afterPath="$PROJECT_DIR$/src/Engine.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,15 +24,17 @@
       <file leaf-file-name="Engine.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="65" column="25" lean-forward="false" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+            <state relative-caret-position="341">
+              <caret line="134" column="18" lean-forward="true" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
               <folding>
-                <element signature="e#433#591#0" expanded="false" />
-                <element signature="e#635#875#0" expanded="false" />
-                <element signature="e#920#1323#0" expanded="false" />
-                <element signature="e#1356#1383#0" expanded="false" />
-                <element signature="e#1970#2622#0" expanded="false" />
-                <element signature="e#2658#3228#0" expanded="false" />
+                <element signature="e#261#448#0" expanded="false" />
+                <element signature="e#491#649#0" expanded="false" />
+                <element signature="e#693#933#0" expanded="false" />
+                <element signature="e#978#1381#0" expanded="false" />
+                <element signature="e#1414#1441#0" expanded="false" />
+                <element signature="e#1476#1990#0" expanded="false" />
+                <element signature="e#2028#2680#0" expanded="false" />
+                <element signature="e#2716#3286#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -40,8 +43,8 @@
       <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="234" column="2" lean-forward="true" selection-start-line="234" selection-start-column="2" selection-end-line="234" selection-end-column="2" />
+            <state relative-caret-position="391">
+              <caret line="238" column="33" lean-forward="false" selection-start-line="238" selection-start-column="33" selection-end-line="238" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -128,10 +131,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="210" />
-    <option name="y" value="-17" />
-    <option name="width" value="1586" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -306,7 +308,7 @@
       <workItem from="1510076846501" duration="169000" />
       <workItem from="1510077087671" duration="1078000" />
       <workItem from="1510083587093" duration="8223000" />
-      <workItem from="1510128479460" duration="11636000" />
+      <workItem from="1510128479460" duration="14666000" />
     </task>
     <task id="LOCAL-00001" summary="test histoire 1">
       <created>1506932790695</created>
@@ -539,54 +541,60 @@
       <option name="project" value="LOCAL" />
       <updated>1510148814684</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="histoire 25 fini">
+      <created>1510148831664</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1510148831664</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2017.11.08 at 14h 25m 28s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 26m 38s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 26m 16s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 27m 15s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 28m 24s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 28m 23s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 28m 32s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 29m 03s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 36m 40s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 29m 31s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 38m 53s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 29m 49s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 39m 04s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 30m 28s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 42m 20s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 36m 44s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 44m 39s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 37m 02s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 14h 45m 07s.xml">
+    <history-entry file="Tests - 2017.11.08 at 15h 37m 22s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61891000" />
+    <option name="totallyTimeSpent" value="64921000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25574112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3255814" sideWeight="0.1546875" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3255814" sideWeight="0.8453125" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32870865" sideWeight="0.8453125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20254777" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852563" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -635,7 +643,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test histoire 4" />
     <MESSAGE value="test histoire 5" />
     <MESSAGE value="test histoire 4 ok&#10; modification de la partie clone dans le test pour s'appeler elle meme" />
     <MESSAGE value="test histoire 4 ok" />
@@ -660,11 +667,12 @@
     <MESSAGE value="test histoire 24" />
     <MESSAGE value="histoire 24 fini" />
     <MESSAGE value="test histoire 25" />
-    <option name="LAST_COMMIT_MESSAGE" value="test histoire 25" />
+    <MESSAGE value="histoire 25 fini" />
+    <option name="LAST_COMMIT_MESSAGE" value="histoire 25 fini" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -797,23 +805,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="65" column="25" lean-forward="false" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+        <state relative-caret-position="341">
+          <caret line="134" column="18" lean-forward="true" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
           <folding>
-            <element signature="e#433#591#0" expanded="false" />
-            <element signature="e#635#875#0" expanded="false" />
-            <element signature="e#920#1323#0" expanded="false" />
-            <element signature="e#1356#1383#0" expanded="false" />
-            <element signature="e#1970#2622#0" expanded="false" />
-            <element signature="e#2658#3228#0" expanded="false" />
+            <element signature="e#261#448#0" expanded="false" />
+            <element signature="e#491#649#0" expanded="false" />
+            <element signature="e#693#933#0" expanded="false" />
+            <element signature="e#978#1381#0" expanded="false" />
+            <element signature="e#1414#1441#0" expanded="false" />
+            <element signature="e#1476#1990#0" expanded="false" />
+            <element signature="e#2028#2680#0" expanded="false" />
+            <element signature="e#2716#3286#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="234" column="2" lean-forward="true" selection-start-line="234" selection-start-column="2" selection-end-line="234" selection-end-column="2" />
+        <state relative-caret-position="391">
+          <caret line="238" column="33" lean-forward="false" selection-start-line="238" selection-start-column="33" selection-end-line="238" selection-end-column="33" />
           <folding />
         </state>
       </provider>
