@@ -5,9 +5,10 @@ Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
 
 Lyngk.Engine = function () {
     var tab = {};
-
+    var player ;
     var init = function()
     {
+        player = 1;
         var coordok = Lyngk.valtab;
         for(var i = 0; i < coordok.length; i++)
         {
@@ -106,6 +107,9 @@ Lyngk.Engine = function () {
         return ok;
     };
 
+    this.getPlayer = function (){
+        return player;
+    }
 
     init();
 
