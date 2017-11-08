@@ -227,3 +227,9 @@ LyngkTestCase.prototype.testhist24 = function () {
     jeu.init_multi_color();
     assertEquals(jeu.getPlayer(),1);
 };
+LyngkTestCase.prototype.testhist25 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    jeu.deplace("G4","G5");
+    assertEquals(jeu.getPlayer(),2);
+};
