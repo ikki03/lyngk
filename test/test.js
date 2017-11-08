@@ -187,3 +187,23 @@ LyngkTestCase.prototype.testhist20 = function () {
     assertEquals(plateau["E2"].getState(),Lyngk.State.FULL_STACK);
     assertEquals(plateau["E3"].getHauteur(),1);
 };
+LyngkTestCase.prototype.testhist21 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    var plateau = jeu.plateau();
+    jeu.deplace("A3","B3");
+    jeu.deplace("C3","B3");
+    assertEquals(plateau["B3"].getHauteur(),2);
+    assertEquals(plateau["C3"].getHauteur(),1);
+};
+LyngkTestCase.prototype.testhist22 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    var plateau = jeu.plateau();
+    jeu.deplace("I7","H6");
+    jeu.deplace("G4","G5");
+    jeu.deplace("G5","G6")
+    jeu.deplace("H6","G6")
+    assertEquals(plateau["H6"].getHauteur(),2);
+    assertEquals(plateau["G6"].getHauteur(),3);
+};
