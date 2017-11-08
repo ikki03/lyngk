@@ -56,7 +56,7 @@ Lyngk.Engine = function () {
     };
     this.deplace = function(a,b) {
 
-        if (tab[b].getState()!=Lyngk.State.VACANT && deplaceok(a,b)) {
+        if (tab[b].getState()!=Lyngk.State.VACANT && deplaceok(a,b) && tab[a].getState()!=Lyngk.State.FULL_STACK) {
             var piece = tab[a].getpiece();
             for (var psolo in piece) {
                 tab[b].pose(piece[psolo].getColor());

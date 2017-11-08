@@ -26,13 +26,13 @@ Lyngk.Intersection = function () {
         pieces = pieces.slice(i,i);
         if(pieces.length==0) {
             state = Lyngk.State.VACANT;
-        }else if(pieces.length >  0 && pieces.length < 4){
+        }else if(pieces.length==1){
+            state = Lyngk.State.ONE_PIECE;
+        }else if(pieces.length >  1 && pieces.length <= 4){
             state = Lyngk.State.STACK;
-        }else if(pieces.length >= 4){
+        }else if(pieces.length > 4){
             state = Lyngk.State.FULL_STACK;
         }
-
-
     };
 
 

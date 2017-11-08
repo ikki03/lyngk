@@ -301,7 +301,7 @@
       <workItem from="1510076846501" duration="169000" />
       <workItem from="1510077087671" duration="1078000" />
       <workItem from="1510083587093" duration="8223000" />
-      <workItem from="1510128479460" duration="2779000" />
+      <workItem from="1510128479460" duration="2816000" />
     </task>
     <task id="LOCAL-00001" summary="test histoire 1">
       <created>1506932790695</created>
@@ -471,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510092095079</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="test histoire 20">
+      <created>1510134086299</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1510134086300</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -507,7 +514,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53034000" />
+    <option name="totallyTimeSpent" value="53071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -590,7 +597,8 @@
     <MESSAGE value="test histoire 18" />
     <MESSAGE value="histoire 18 fini" />
     <MESSAGE value="histoire 19 fini mais le déplacement de h5 vers f5 est possible" />
-    <option name="LAST_COMMIT_MESSAGE" value="histoire 19 fini mais le déplacement de h5 vers f5 est possible" />
+    <MESSAGE value="test histoire 20" />
+    <option name="LAST_COMMIT_MESSAGE" value="test histoire 20" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
