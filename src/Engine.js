@@ -62,8 +62,8 @@ Lyngk.Engine = function () {
             for (var psolo in piece) {
                 tab[b].pose(piece[psolo].getColor());
                 tab[a].remove(parseInt(psolo));
-
             }
+            nextPlayer();
         }else {
             console.log("erreur déplacement de "+a+" -> "+b+" non effectuer")
         }
@@ -109,7 +109,15 @@ Lyngk.Engine = function () {
 
     this.getPlayer = function (){
         return player;
-    }
+    };
+
+    var nextPlayer = function (){
+        if(player==1){
+            player =2;
+        }else{
+            player =1;
+        }
+    };
 
     init();
 

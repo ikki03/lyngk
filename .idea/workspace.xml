@@ -4,7 +4,6 @@
     <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine.js" afterPath="$PROJECT_DIR$/src/Engine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -307,7 +306,7 @@
       <workItem from="1510076846501" duration="169000" />
       <workItem from="1510077087671" duration="1078000" />
       <workItem from="1510083587093" duration="8223000" />
-      <workItem from="1510128479460" duration="11539000" />
+      <workItem from="1510128479460" duration="11636000" />
     </task>
     <task id="LOCAL-00001" summary="test histoire 1">
       <created>1506932790695</created>
@@ -533,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510148417125</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="test histoire 25">
+      <created>1510148814684</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1510148814684</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -569,7 +575,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61794000" />
+    <option name="totallyTimeSpent" value="61891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -629,7 +635,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test histoire 3 ok" />
     <MESSAGE value="test histoire 4" />
     <MESSAGE value="test histoire 5" />
     <MESSAGE value="test histoire 4 ok&#10; modification de la partie clone dans le test pour s'appeler elle meme" />
@@ -654,7 +659,8 @@
     <MESSAGE value="histoire 23 fini , mais qui entrainne parfois des erreurs sur les questions 15 à 22 car les pieces sont disposse de maniere aleatoirs" />
     <MESSAGE value="test histoire 24" />
     <MESSAGE value="histoire 24 fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="histoire 24 fini" />
+    <MESSAGE value="test histoire 25" />
+    <option name="LAST_COMMIT_MESSAGE" value="test histoire 25" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
