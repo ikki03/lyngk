@@ -56,7 +56,7 @@ Lyngk.Engine = function () {
     };
     this.deplace = function(a,b) {
 
-        if (tab[b].getState()!=Lyngk.State.VACANT && deplaceok(a,b) && tab[a].getState()!=Lyngk.State.FULL_STACK && tab[a].getHauteur() >= tab[b].getHauteur()) {
+        if (tab[b].getState()!=Lyngk.State.VACANT && deplaceok(a,b) && tab[a].getState()!=Lyngk.State.FULL_STACK && tab[a].getHauteur() >= tab[b].getHauteur() && colorok(a,b)) {
             var piece = tab[a].getpiece();
             for (var psolo in piece) {
                 tab[b].pose(piece[psolo].getColor());
@@ -88,7 +88,24 @@ Lyngk.Engine = function () {
             }
         }
         return ok;
-    }
+    };
+
+    var colorok = function (a,b) {
+        var ok = true;
+        var piecea = tab[a].getpiece();
+        var pieceb = tab[b].getpiece();
+        for (var compteur in piecea){
+            for (var compt2 in pieceb){
+           // console.log("colorok -> couleur i7 : "+piecea[compteur].getColor()+" couleur h6 : "+pieceb[compt2].getColor());
+                if(pieceb[compt2].getColor() == piecea[compteur].getColor() && pieceb[compt2].getColor()!=Lyngk.Color.WHITE){
+                    ok=false;
+                }
+            }
+        }
+ //       console.log("couleur : "+ok)
+        return ok;
+    };
+
 
     init();
 
