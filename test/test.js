@@ -222,3 +222,8 @@ LyngkTestCase.prototype.testhist23 = function () {
     assertEquals(plateau["H6"].getHauteur(),2);
     assertEquals(plateau["I7"].getHauteur(),2);
 };
+LyngkTestCase.prototype.testhist24 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.init_multi_color();
+    assertEquals(jeu.getPlayer(),1);
+};
