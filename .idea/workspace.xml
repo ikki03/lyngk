@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine.js" afterPath="$PROJECT_DIR$/src/Engine.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Intersection.js" afterPath="$PROJECT_DIR$/src/Intersection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -323,7 +322,7 @@
       <workItem from="1510076846501" duration="169000" />
       <workItem from="1510077087671" duration="1078000" />
       <workItem from="1510083587093" duration="8223000" />
-      <workItem from="1510128479460" duration="21927000" />
+      <workItem from="1510128479460" duration="21970000" />
     </task>
     <task id="LOCAL-00001" summary="test histoire 1">
       <created>1506932790695</created>
@@ -577,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510151884566</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="test histoire 27">
+      <created>1510159136764</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1510159136764</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -613,7 +619,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72182000" />
+    <option name="totallyTimeSpent" value="72225000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -673,7 +679,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test histoire 4 ok" />
     <MESSAGE value="test histoire 10 ok modification pour passer en tableau fini" />
     <MESSAGE value="test histoire 11" />
     <MESSAGE value="test histoire 11 fini" />
@@ -698,7 +703,8 @@
     <MESSAGE value="histoire 25 fini" />
     <MESSAGE value="test histoire 26" />
     <MESSAGE value="histoire 26 fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="histoire 26 fini" />
+    <MESSAGE value="test histoire 27" />
+    <option name="LAST_COMMIT_MESSAGE" value="test histoire 27" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

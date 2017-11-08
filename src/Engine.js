@@ -2,12 +2,13 @@
 
 // enums definition
 Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
-
 Lyngk.Engine = function () {
     var tab = {};
     var player ;
     var coloreclamer1 = [] ;
     var coloreclamer2 = [] ;
+    var nbpiecestotal=0;
+    var score = [0,0];
     var init = function()
     {
         player = 1;
@@ -23,6 +24,7 @@ Lyngk.Engine = function () {
         for (var coor in tab) {
             if (tab.hasOwnProperty(coor)) {
                 tab[coor].pose(Lyngk.Color.IVORY);
+                nbpiecestotal++;
             }
         }
     };
@@ -50,6 +52,7 @@ Lyngk.Engine = function () {
                 }while(dispo[randomColor] <= 0)
                 dispo[randomColor]--;
                 tab[coor].pose(randomColor);
+                nbpiecestotal++;
             }
         }
     };
@@ -64,6 +67,28 @@ Lyngk.Engine = function () {
             for (var psolo in piece) {
                 tab[b].pose(piece[psolo].getColor());
                 tab[a].remove(parseInt(psolo));
+            }
+            if(tab[b].getState()==Lyngk.State.FULL_STACK){
+                console.log("full stack");
+                var colorcheck;
+                if(this.getPlayer()==1){
+                    colorcheck = coloreclamer1;
+                }else {
+                    colorcheck =coloreclamer2;
+                }
+                var i =0;
+                for(var comte in tab[b].getpiece()){
+                    var piecs = tab[b].getpiece();
+                    if(piecs[comte].getColor() == colorcheck && i ==0){
+                        console.log("touchdown");
+                        score[this.getPlayer()]++;
+                        for (var compte in tab[b].getpiece()){
+                            tab[b].remove(compte);
+                            nbpiecestotal--;
+                        }
+                        i++;
+                    }
+                }
             }
             nextPlayer();
         }else {
@@ -139,7 +164,12 @@ Lyngk.Engine = function () {
             console.log("la couleur n'a pas pu etre reclammer");
         }
     };
-
+    this.getNbPieceTotale = function (){
+        return nbpiecestotal;
+    };
+    this.getScore= function (i){
+        return score[1];
+    };
     init();
 
 };

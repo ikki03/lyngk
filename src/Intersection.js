@@ -20,7 +20,6 @@ Lyngk.Intersection = function () {
             state = Lyngk.State.FULL_STACK;
         }
         pieces.push(new Lyngk.Piece(colo));
-
     };
     this.remove=function(i){
         pieces = pieces.slice(i,i);
