@@ -9,20 +9,7 @@ Lyngk.Intersection = function () {
     this.getState=function(){
         return state;
     };
-
-    this.pose=function(colo){
-
-        if(pieces.length<=0) {
-            state = Lyngk.State.ONE_PIECE;
-        }else if(pieces.length >  0 && pieces.length < 4){
-            state = Lyngk.State.STACK;
-        }else if(pieces.length >= 4){
-            state = Lyngk.State.FULL_STACK;
-        }
-        pieces.push(new Lyngk.Piece(colo));
-    };
-    this.remove=function(i){
-        pieces = pieces.slice(i,i);
+    var updateState=function(){
         if(pieces.length==0) {
             state = Lyngk.State.VACANT;
         }else if(pieces.length==1){
@@ -32,6 +19,16 @@ Lyngk.Intersection = function () {
         }else if(pieces.length > 4){
             state = Lyngk.State.FULL_STACK;
         }
+    };
+
+    this.pose=function(colo){
+        pieces.push(new Lyngk.Piece(colo));
+        updateState();
+    };
+
+    this.remove=function(i){
+        pieces = pieces.slice(i,i);
+        updateState();
     };
 
 

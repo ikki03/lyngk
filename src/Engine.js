@@ -98,19 +98,16 @@ Lyngk.Engine = function () {
 
     var deplaceok = function (a,b) {
         var ok = false;
-        var test;
+        var test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
         if (a.charAt(0) === b.charAt(0)){
-            test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
            if(test == 1 || test == -1){
                ok =true ;
            }
         }else if (a.charAt(0) > b.charAt(0)){
-            test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
             if(test == 1 || test == 0){
                 ok =true ;
             }
         }else if (a.charAt(0) < b.charAt(0)){
-            test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
             if(test == 0 || test == -1){
                 ok =true ;
             }
