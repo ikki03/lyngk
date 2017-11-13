@@ -3,7 +3,7 @@
 var LyngkTestCase = TestCase("LyngkTestCase");
 LyngkTestCase.prototype.testcoorok = function () {
     var testcase = new Lyngk.Coordinates("A", 1);
-    assertFalse(testcase.valid());
+    assertFalse(testcase.validate());
 };
 LyngkTestCase.prototype.testhist2 = function () {
     var compteur = 0;
@@ -11,7 +11,7 @@ LyngkTestCase.prototype.testhist2 = function () {
     for (var c = 65; c <= 74; c++) {
         for (var l = 1; l <= 9; l++) {
             testcase = new Lyngk.Coordinates(String.fromCharCode(c), l);
-            if (testcase.valid()) {
+            if (testcase.validate()) {
                 compteur++;
             }
         }
@@ -41,38 +41,38 @@ LyngkTestCase.prototype.testhist7 = function () {
 };
 LyngkTestCase.prototype.testhist8 = function () {
     var intersect = new Lyngk.Intersection();
-    intersect.pose(Lyngk.Color.BLUE);
+    intersect.putPiece(Lyngk.Color.BLUE);
     assertEquals(intersect.getState(),Lyngk.State.ONE_PIECE);
     assertEquals(intersect.getColor(),Lyngk.Color.BLUE);
 };
 LyngkTestCase.prototype.testhist9 = function () {
     var intersect = new Lyngk.Intersection();
-    intersect.pose(Lyngk.Color.BLUE);
-    intersect.pose(Lyngk.Color.RED);
+    intersect.putPiece(Lyngk.Color.BLUE);
+    intersect.putPiece(Lyngk.Color.RED);
     assertEquals(intersect.getState(),Lyngk.State.STACK);
     assertEquals(intersect.getColor(),Lyngk.Color.RED);
 };
 LyngkTestCase.prototype.testhist10 = function () {
     var intersect = new Lyngk.Intersection();
-    intersect.pose(Lyngk.Color.BLUE);
-    intersect.pose(Lyngk.Color.RED);
-    intersect.pose(Lyngk.Color.BLACK);
-    intersect.pose(Lyngk.Color.GREEN);
-    intersect.pose(Lyngk.Color.IVORY);
+    intersect.putPiece(Lyngk.Color.BLUE);
+    intersect.putPiece(Lyngk.Color.RED);
+    intersect.putPiece(Lyngk.Color.BLACK);
+    intersect.putPiece(Lyngk.Color.GREEN);
+    intersect.putPiece(Lyngk.Color.IVORY);
     assertEquals(intersect.getState(),Lyngk.State.FULL_STACK);
 };
 LyngkTestCase.prototype.testhist11 = function () {
     var plateau = new Lyngk.Engine();
-    plateau.init_OnePiece();
-    assertTrue(plateau.full_One_Piece());
+    plateau.initOnePiece();
+    assertTrue(plateau.fullOnePiece());
 };
 
 
 LyngkTestCase.prototype.testhist12 = function()
 {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
 
     var colorNumber = [0,0,0,0,0,0];
 
@@ -96,184 +96,184 @@ LyngkTestCase.prototype.testhist12 = function()
 
 LyngkTestCase.prototype.testhist13 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
     for (var coor in plateau) {
-        assertEquals(plateau[coor].getHauteur(),1);
+        assertEquals(plateau[coor].getHeight(),1);
     }
 };
 LyngkTestCase.prototype.testhist14 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
     for (var coor in plateau) {
-        assertEquals(plateau[coor].getColor(),plateau[coor].topiece().getColor());
+        assertEquals(plateau[coor].getColor(),plateau[coor].getTopPiece().getColor());
     }
 };
 LyngkTestCase.prototype.testhist15 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
     var coloratest = plateau["A3"].getColor();
-    jeu.deplace("A3","B3");
-    assertEquals(plateau["A3"].getHauteur(),0);
+    jeu.move("A3","B3");
+    assertEquals(plateau["A3"].getHeight(),0);
     assertEquals(plateau["A3"].getState(),Lyngk.State.VACANT);
     assertEquals(plateau["B3"].getColor(),coloratest);
-    assertEquals(plateau["B3"].getHauteur(),2 );
+    assertEquals(plateau["B3"].getHeight(),2 );
 };
 LyngkTestCase.prototype.testhist16 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
 
     var coloratest = plateau["A3"].getColor();
-    jeu.deplace("A3","B3");
-    assertEquals(plateau["A3"].getHauteur(),0);
+    jeu.move("A3","B3");
+    assertEquals(plateau["A3"].getHeight(),0);
     assertEquals(plateau["A3"].getState(),Lyngk.State.VACANT);
     assertEquals(plateau["B3"].getColor(),coloratest);
-    assertEquals(plateau["B3"].getHauteur(),2);
+    assertEquals(plateau["B3"].getHeight(),2);
     coloratest = plateau["B3"].getColor();
-    jeu.deplace("B3","B2");
-    assertEquals(plateau["B3"].getHauteur(),0);
+    jeu.move("B3","B2");
+    assertEquals(plateau["B3"].getHeight(),0);
     assertEquals(plateau["B3"].getState(),Lyngk.State.VACANT);
     assertEquals(plateau["B2"].getState(),Lyngk.State.STACK);
     assertEquals(plateau["B2"].getColor(),coloratest);
-    assertEquals(plateau["B2"].getHauteur(),3);
+    assertEquals(plateau["B2"].getHeight(),3);
 };
 LyngkTestCase.prototype.testhist17 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
     var coloratest = plateau["B2"].getColor();
-    jeu.deplace("B2","B3");
-    jeu.deplace("B3","B2");
-    assertEquals(plateau["B3"].getHauteur(),2);
+    jeu.move("B2","B3");
+    jeu.move("B3","B2");
+    assertEquals(plateau["B3"].getHeight(),2);
     assertEquals(plateau["B3"].getState(),Lyngk.State.STACK);
     assertEquals(plateau["B3"].getColor(),coloratest);
     assertEquals(plateau["B2"].getState(),Lyngk.State.VACANT);
-    assertEquals(plateau["B2"].getHauteur(),0);
+    assertEquals(plateau["B2"].getHeight(),0);
 };
 LyngkTestCase.prototype.testhist18 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
-    jeu.deplace("C2","B3");
-    assertEquals(plateau["B3"].getHauteur(),1);
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
+    jeu.move("C2","B3");
+    assertEquals(plateau["B3"].getHeight(),1);
     assertEquals(plateau["B3"].getState(),Lyngk.State.ONE_PIECE);
     assertEquals(plateau["C2"].getState(),Lyngk.State.ONE_PIECE);
-    assertEquals(plateau["C2"].getHauteur(),1);
+    assertEquals(plateau["C2"].getHeight(),1);
 };
 LyngkTestCase.prototype.testhist19 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
-    jeu.deplace("I7","H6");
-    jeu.deplace("H6","H5");
-    jeu.deplace("H5","H8");
-    jeu.deplace("H5","F3");
-    assertEquals(plateau["H5"].getHauteur(),3);
-    assertEquals(plateau["H8"].getHauteur(),1);
-    jeu.deplace("H5","F5"); // c'est un coup qui est possible .
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
+    jeu.move("I7","H6");
+    jeu.move("H6","H5");
+    jeu.move("H5","H8");
+    jeu.move("H5","F3");
+    assertEquals(plateau["H5"].getHeight(),3);
+    assertEquals(plateau["H8"].getHeight(),1);
+    jeu.move("H5","F5"); // c'est un coup qui est possible .
 };
 LyngkTestCase.prototype.testhist20 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
-    jeu.deplace("B2","C2");
-    jeu.deplace("C2","D3");
-    jeu.deplace("D3","D2");
-    jeu.deplace("D2","E2");
-    jeu.deplace("E2","E3");
-    assertEquals(plateau["E2"].getHauteur(),5);
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
+    jeu.move("B2","C2");
+    jeu.move("C2","D3");
+    jeu.move("D3","D2");
+    jeu.move("D2","E2");
+    jeu.move("E2","E3");
+    assertEquals(plateau["E2"].getHeight(),5);
     assertEquals(plateau["E2"].getState(),Lyngk.State.FULL_STACK);
-    assertEquals(plateau["E3"].getHauteur(),1);
+    assertEquals(plateau["E3"].getHeight(),1);
 };
 LyngkTestCase.prototype.testhist21 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
-    jeu.deplace("A3","B3");
-    jeu.deplace("C3","B3");
-    assertEquals(plateau["B3"].getHauteur(),2);
-    assertEquals(plateau["C3"].getHauteur(),1);
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
+    jeu.move("A3","B3");
+    jeu.move("C3","B3");
+    assertEquals(plateau["B3"].getHeight(),2);
+    assertEquals(plateau["C3"].getHeight(),1);
 };
 LyngkTestCase.prototype.testhist22 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
-    jeu.deplace("I7","H6");
-    jeu.deplace("G4","G5");
-    jeu.deplace("G5","G6")
-    jeu.deplace("H6","G6")
-    assertEquals(plateau["H6"].getHauteur(),2);
-    assertEquals(plateau["G6"].getHauteur(),3);
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
+    jeu.move("I7","H6");
+    jeu.move("G4","G5");
+    jeu.move("G5","G6");
+    jeu.move("H6","G6");
+    assertEquals(plateau["H6"].getHeight(),2);
+    assertEquals(plateau["G6"].getHeight(),3);
 };
 LyngkTestCase.prototype.testhist23 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
     plateau["I7"].remove(1);
     plateau["H6"].remove(1);
-    plateau["I7"].pose(Lyngk.Color.BLUE);
-    plateau["I7"].pose(Lyngk.Color.WHITE);
-    plateau["H6"].pose(Lyngk.Color.BLUE);
-    plateau["H6"].pose(Lyngk.Color.WHITE);
-    jeu.deplace("I7","H6");
-    assertEquals(plateau["H6"].getHauteur(),2);
-    assertEquals(plateau["I7"].getHauteur(),2);
+    plateau["I7"].putPiece(Lyngk.Color.BLUE);
+    plateau["I7"].putPiece(Lyngk.Color.WHITE);
+    plateau["H6"].putPiece(Lyngk.Color.BLUE);
+    plateau["H6"].putPiece(Lyngk.Color.WHITE);
+    jeu.move("I7","H6");
+    assertEquals(plateau["H6"].getHeight(),2);
+    assertEquals(plateau["I7"].getHeight(),2);
 };
 LyngkTestCase.prototype.testhist24 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
+    jeu.initmulticolor();
     assertEquals(jeu.getPlayer(),1);
 };
 LyngkTestCase.prototype.testhist25 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    jeu.deplace("G4","G5");
+    jeu.initmulticolor();
+    jeu.move("G4","G5");
     assertEquals(jeu.getPlayer(),2);
 };
 LyngkTestCase.prototype.testhist26 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    jeu.reclame(Lyngk.Color.RED);
-    jeu.deplace("A3","B3");
-    jeu.reclame(Lyngk.Color.GREEN);
-    assertEquals(jeu.getReclame(1),Lyngk.Color.RED);
-    assertEquals(jeu.getReclame(2),Lyngk.Color.GREEN);
+    jeu.initmulticolor();
+    jeu.setColorTaken(Lyngk.Color.RED);
+    jeu.move("A3","B3");
+    jeu.setColorTaken(Lyngk.Color.GREEN);
+    assertEquals(jeu.getColorTaken(1),Lyngk.Color.RED);
+    assertEquals(jeu.getColorTaken(2),Lyngk.Color.GREEN);
 };
 LyngkTestCase.prototype.testhist27 = function () {
     var jeu = new Lyngk.Engine();
-    jeu.init_multi_color();
-    var plateau = jeu.plateau();
-    jeu.reclame(Lyngk.Color.BLUE);
+    jeu.initmulticolor();
+    var plateau = jeu.getBoard();
+    jeu.setColorTaken(Lyngk.Color.BLUE);
     plateau["A3"].remove(1);
-    plateau["A3"].pose(Lyngk.Color.BLUE);
+    plateau["A3"].putPiece(Lyngk.Color.BLUE);
     plateau["B3"].remove(1);
-    plateau["B3"].pose(Lyngk.Color.WHITE);
+    plateau["B3"].putPiece(Lyngk.Color.WHITE);
     plateau["H6"].remove(1);
-    plateau["H6"].pose(Lyngk.Color.WHITE);
+    plateau["H6"].putPiece(Lyngk.Color.WHITE);
     plateau["G5"].remove(1);
-    plateau["G5"].pose(Lyngk.Color.WHITE);
+    plateau["G5"].putPiece(Lyngk.Color.WHITE);
     plateau["G6"].remove(1);
-    plateau["G6"].pose(Lyngk.Color.WHITE);
+    plateau["G6"].putPiece(Lyngk.Color.WHITE);
     plateau["C3"].remove(1);
-    plateau["C3"].pose(Lyngk.Color.WHITE);
+    plateau["C3"].putPiece(Lyngk.Color.WHITE);
     plateau["C2"].remove(1);
-    plateau["C2"].pose(Lyngk.Color.WHITE);
+    plateau["C2"].putPiece(Lyngk.Color.WHITE);
     plateau["G7"].remove(1);
-    plateau["G7"].pose(Lyngk.Color.WHITE);
+    plateau["G7"].putPiece(Lyngk.Color.WHITE);
     plateau["D2"].remove(1);
-    plateau["D2"].pose(Lyngk.Color.RED);
-    jeu.deplace("A3","B3");
-    jeu.deplace("H6","G5");
-    jeu.deplace("B3","C3");
-    jeu.deplace("G5","G6");
-    jeu.deplace("C3","C2");
-    jeu.deplace("G6","G7");
-    jeu.deplace("C2","D2");
-    assertEquals(jeu.getReclame(1),Lyngk.Color.BLUE);
+    plateau["D2"].putPiece(Lyngk.Color.RED);
+    jeu.move("A3","B3");
+    jeu.move("H6","G5");
+    jeu.move("B3","C3");
+    jeu.move("G5","G6");
+    jeu.move("C3","C2");
+    jeu.move("G6","G7");
+    jeu.move("C2","D2");
+    assertEquals(jeu.getColorTaken(1),Lyngk.Color.BLUE);
     assertEquals(jeu.getScore(1),1);
-    assertEquals(jeu.getNbPieceTotale(),38);
+    assertEquals(jeu.getCounterOfPiecesInTheBoard(),38);
     assertEquals(plateau["D2"].getState(),Lyngk.State.VACANT);
 };

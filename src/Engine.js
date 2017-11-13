@@ -1,172 +1,165 @@
 "use strict";
 
-// enums definition
 Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
+
 Lyngk.Engine = function () {
-    var tab = {};
-    var player ;
-    var coloreclamer1 = [] ;
-    var coloreclamer2 = [] ;
-    var nbpiecestotal=0;
-    var score = [0,0];
+    var _board = {};
+    var _player ;
+    var _colorTakenByP1 = [] ;
+    var _colorTakenByP2 = [] ;
+    var _numberOfPIeceInTheBoard=0;
+    var _score = [0,0];
+    
     var init = function()
     {
-        player = 1;
-        var coordok = Lyngk.valtab;
-        for(var i = 0; i < coordok.length; i++)
+        _player = 1;
+        var validCoordinates = Lyngk.valtab;
+
+        for(var i = 0; i < validCoordinates.length; i++)
         {
-            tab[coordok[i]] = new Lyngk.Intersection();
+            _board[validCoordinates[i]] = new Lyngk.Intersection();
         }
     };
 
-    this.init_OnePiece = function()
+    this.initOnePiece = function()
     {
-        for (var coor in tab) {
-            if (tab.hasOwnProperty(coor)) {
-                tab[coor].pose(Lyngk.Color.IVORY);
-                nbpiecestotal++;
+        for (var cordinateInBoard in _board) {
+            if (_board.hasOwnProperty(cordinateInBoard)) {
+                _board[cordinateInBoard].putPiece(Lyngk.Color.IVORY);
+                _numberOfPIeceInTheBoard++;
             }
         }
     };
 
-    this.full_One_Piece = function()
+    this.fullOnePiece = function()
     {
-        for (var coor in tab) {
-            if (tab.hasOwnProperty(coor))
+        for (var cordinateInBoard in _board) {
+            if (_board.hasOwnProperty(cordinateInBoard) && _board[cordinateInBoard].getState() !== Lyngk.State.ONE_PIECE)
             {
-                if(tab[coor].getState() != Lyngk.State.ONE_PIECE)
                     return false;
             }
         }
         return true;
     };
-    this.init_multi_color = function()
+    this.initmulticolor = function()
     {
-        var dispo = [8,8,8,8,8,3];
-        for (var coor in tab) {
-            if (tab.hasOwnProperty(coor))
+        var colorAvailables = [8,8,8,8,8,3];
+        for (var cordinateInBoard in _board) {
+            if (_board.hasOwnProperty(cordinateInBoard))
             {
                 var randomColor;
                 do{
                     randomColor = Math.floor(Math.random() * 6);
-                }while(dispo[randomColor] <= 0)
-                dispo[randomColor]--;
-                tab[coor].pose(randomColor);
-                nbpiecestotal++;
+                }while(colorAvailables[randomColor] <= 0);
+                colorAvailables[randomColor]--;
+                _board[cordinateInBoard].putPiece(randomColor);
+                _numberOfPIeceInTheBoard++;
             }
         }
     };
 
-    this.plateau = function() {
-        return tab;
+    this.getBoard = function() {
+        return _board;
     };
-    this.deplace = function(a,b) {
+    this.move = function(entry, exit) {
 
-        if (tab[b].getState()!=Lyngk.State.VACANT && deplaceok(a,b) && tab[a].getState()!=Lyngk.State.FULL_STACK && tab[a].getHauteur() >= tab[b].getHauteur() && colorok(a,b)) {
-            var piece = tab[a].getpiece();
-            for (var psolo in piece) {
-                tab[b].pose(piece[psolo].getColor());
-                tab[a].remove(parseInt(psolo));
+        if (_board[exit].getState()!==Lyngk.State.VACANT && moveok(entry,exit) && _board[entry].getState()!==Lyngk.State.FULL_STACK && _board[entry].getHeight() >= _board[exit].getHeight() && colorok(entry,exit)) {
+            var entryPieces = _board[entry].getAllPiece();
+            for (var counterForPiecesToMove in entryPieces) {
+                _board[exit].putPiece(entryPieces[counterForPiecesToMove].getColor());
+                _board[entry].remove(parseInt(counterForPiecesToMove));
             }
-            if(tab[b].getState()==Lyngk.State.FULL_STACK){
+
+            if(_board[exit].getState()===Lyngk.State.FULL_STACK){
                 console.log("full stack");
-                var colorcheck;
-                if(this.getPlayer()==1){
-                    colorcheck = coloreclamer1;
+                var colorToCHeck;
+                if(this.getPlayer()===1){
+                    colorToCHeck = _colorTakenByP1[0];
                 }else {
-                    colorcheck =coloreclamer2;
+                    colorToCHeck =_colorTakenByP2[0];
                 }
-                var i =0;
-                for(var comte in tab[b].getpiece()){
-                    var piecs = tab[b].getpiece();
-                    if(piecs[comte].getColor() == colorcheck && i ==0){
+                for(var counterOfPieces in _board[exit].getAllPiece()){
+                    var piecesToTest = _board[exit].getAllPiece();
+                    if(piecesToTest[counterOfPieces].getColor() === colorToCHeck){
                         console.log("touchdown");
-                        score[this.getPlayer()]++;
-                        for (var compte in tab[b].getpiece()){
-                            tab[b].remove(compte);
-                            nbpiecestotal--;
+                        _score[this.getPlayer()]++;
+                        for (var counterForRemoving in _board[exit].getAllPiece()){
+                            _board[exit].remove(counterForRemoving);
+                            _numberOfPIeceInTheBoard--;
                         }
-                        i++;
                     }
                 }
             }
             nextPlayer();
         }else {
-            console.log("erreur déplacement de "+a+" -> "+b+" non effectuer")
+            console.log("erreur déplacement de "+entry+" -> "+exit+" non effectuer");
         }
     };
 
-    var deplaceok = function (a,b) {
-        var ok = false;
-        var test = parseInt(a.charAt(1)) - parseInt(b.charAt(1));
-        if (a.charAt(0) === b.charAt(0)){
-           if(test == 1 || test == -1){
-               ok =true ;
-           }
-        }else if (a.charAt(0) > b.charAt(0)){
-            if(test == 1 || test == 0){
-                ok =true ;
-            }
-        }else if (a.charAt(0) < b.charAt(0)){
-            if(test == 0 || test == -1){
-                ok =true ;
-            }
+    var moveok = function (entry,exit) {
+        var flag = false;
+        var row =entry.charCodeAt(0)-exit.charCodeAt(0);
+        var column = parseInt(entry.charAt(1)) - parseInt(exit.charAt(1));
+        if(row ===0 || column ===0 || row===column){
+            flag=true;
         }
-        return ok;
+        return flag;
     };
 
-    var colorok = function (a,b) {
-        var ok = true;
-        var piecea = tab[a].getpiece();
-        var pieceb = tab[b].getpiece();
-        for (var compteur in piecea){
-            for (var compt2 in pieceb){
-           // console.log("colorok -> couleur i7 : "+piecea[compteur].getColor()+" couleur h6 : "+pieceb[compt2].getColor());
-                if(pieceb[compt2].getColor() == piecea[compteur].getColor() && pieceb[compt2].getColor()!=Lyngk.Color.WHITE){
-                    ok=false;
+    var colorok = function (entry,exit) {
+        var flag = true;
+        var piecesAtEntry = _board[entry].getAllPiece();
+        var piecesAtExit = _board[exit].getAllPiece();
+        for (var counterAtEntry in piecesAtEntry){
+            for (var counterAtExit in piecesAtExit){
+                if(piecesAtExit[counterAtExit].getColor() === piecesAtEntry[counterAtEntry].getColor() && piecesAtExit[counterAtExit].getColor()!==Lyngk.Color.WHITE){
+                    flag=false;
                 }
             }
         }
- //       console.log("couleur : "+ok)
-        return ok;
+        return flag;
     };
 
     this.getPlayer = function (){
-        return player;
+        return _player;
     };
 
     var nextPlayer = function (){
-        if(player==1){
-            player =2;
+        if(_player===1){
+            _player =2;
         }else{
-            player =1;
+            _player =1;
         }
     };
 
-    this.getReclame = function (i){
-        if(i ==1){
-            return coloreclamer1;
+    this.getColorTaken = function (player){
+        if(player ===1){
+            return _colorTakenByP1;
         }else{
-            return coloreclamer2;
+            return _colorTakenByP2;
         }
     };
-    this.reclame = function (couleur){
-        if(coloreclamer1.indexOf(couleur) ==-1 && coloreclamer2.indexOf(couleur) ==-1){
-            if(this.getPlayer() ==1){
-                coloreclamer1.push(couleur);
+
+    this.setColorTaken = function (color){
+        if(_colorTakenByP1.indexOf(color) ===-1 && _colorTakenByP2.indexOf(color) ===-1){
+            if(this.getPlayer() ===1){
+                _colorTakenByP1.push(color);
             }else{
-                coloreclamer2.push(couleur);
+                _colorTakenByP2.push(color);
             }
         }else{
             console.log("la couleur n'a pas pu etre reclammer");
         }
     };
-    this.getNbPieceTotale = function (){
-        return nbpiecestotal;
+
+    this.getCounterOfPiecesInTheBoard = function (){
+        return _numberOfPIeceInTheBoard;
     };
+
     this.getScore= function (i){
-        return score[1];
+        return _score[1];
     };
+
     init();
 
 };
